@@ -2,9 +2,17 @@
   "name": "react-storybook-addon-intl",
   "version": "0.1.0",
   "description": "React Storybook i18n addon",
-  "main": "lib/index.js",
+  "main": "./lib/index.js",
   "scripts": {
-    "test": "karma start"
+    "test": "karma start",
+    "posttest": "npm run lint",
+    "lint": "eslint -c .eslintrc src",
+    "tdd": "karma start --autoWatch=true --singleRun=false",
+    "relint": "esw ./src -w --parser babel-eslint",
+    "dev": "concurrently \"npm run tdd\" \"npm run relint\"",
+    "clean": "rimraf lib coverage",
+    "build": "babel src --ignore \"*-spec.js\" --out-dir lib",
+    "prepublish": "npm run clean && npm run build"
   },
   "repository": {
     "type": "git",
@@ -22,5 +30,38 @@
   "bugs": {
     "url": "https://github.com/Tarabyte/react-storybook-addon-intl/issues"
   },
-  "homepage": "https://github.com/Tarabyte/react-storybook-addon-intl#readme"
+  "homepage": "https://github.com/Tarabyte/react-storybook-addon-intl#readme",
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.10.4",
+    "babel-eslint": "^6.1.0",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "chai": "^3.5.0",
+    "concurrently": "^2.1.0",
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.9.2",
+    "eslint-plugin-jsx-a11y": "^1.5.3",
+    "eslint-plugin-react": "^5.2.2",
+    "eslint-watch": "^2.1.11",
+    "isparta-loader": "^2.0.0",
+    "karma": "^1.1.0",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-coverage": "^1.0.0",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-mocha": "^1.1.1",
+    "karma-mocha-reporter": "^2.0.4",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^1.7.0",
+    "mocha": "^2.5.3",
+    "react": "^15.1.0",
+    "react-addons-test-utils": "^15.1.0",
+    "rimraf": "^2.5.2",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
 }
