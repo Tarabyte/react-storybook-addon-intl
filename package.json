@@ -1,0 +1,26 @@
+{
+  "name": "react-storybook-addon-intl",
+  "version": "0.1.0",
+  "description": "React Storybook i18n addon",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tarabyte/react-storybook-addon-intl.git"
+  },
+  "keywords": [
+    "react",
+    "storybook",
+    "intl",
+    "i18n",
+    "addon"
+  ],
+  "author": "Yury Tarabanko <tarabanko.yury@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tarabyte/react-storybook-addon-intl/issues"
+  },
+  "homepage": "https://github.com/Tarabyte/react-storybook-addon-intl#readme"
+}
