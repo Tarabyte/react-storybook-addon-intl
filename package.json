@@ -71,5 +71,10 @@
     "rimraf": "^2.5.2",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
+  },
+  "peerDependencies": {
+    "@kadira/storybook": "^1.35.1",
+    "react": "^15.1.0",
+    "react-intl": "^2.1.3"
   }
 }
