@@ -39,3 +39,6 @@ jspm_packages
 $ Sublime files
 *.sublime-project
 *.sublime-workspace
+
+# ES5 compiled version
+lib

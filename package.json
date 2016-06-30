@@ -32,6 +32,10 @@
     "url": "https://github.com/Tarabyte/react-storybook-addon-intl/issues"
   },
   "homepage": "https://github.com/Tarabyte/react-storybook-addon-intl#readme",
+  "files": [
+    "src",
+    "lib"
+  ],
   "devDependencies": {
     "@kadira/storybook": "^1.35.1",
     "babel-cli": "^6.10.1",
