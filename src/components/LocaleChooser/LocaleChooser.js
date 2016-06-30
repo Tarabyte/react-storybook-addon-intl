@@ -9,35 +9,44 @@ const styles = {
     left: 0,
     margin: 0,
     padding: 0,
-    height: '20px',
     width: '100%',
-    borderBottom: '1px solid #666'
+    borderBottom: '1px solid #ddd'
   },
   item: {
     display: 'inline-block',
-    width: '5em'
+    width: '5em',
+    paddingTop: '1em',
+    paddingLeft: '1em',
+    paddingRight: '1em',
+    paddingBottom: '0.5em',
+    textAlign: 'center',
+    cursor: 'pointer',
+    marginBottom: '-1px',
+    color: 'rgb(68, 68, 68)'
   },
   active: {
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    border: '1px solid #ddd',
+    borderTop: '2px solid orange',
+    borderBottom: '1px solid #fff'
   }
 };
 
-const LocaleChooser = ({ locales, locale, onChoose, defaultLocale = 'en' }) => {
+const LocaleChooser = ({ locales, locale, onChoose }) => {
   const itemActive = { ...styles.item, ...styles.active };
   const itemDefault = { ...styles.item };
-
-  const options = [defaultLocale].concat(locales);
 
 
   return (
     <ul style={styles.list}>
       {
-        options.map(option => (
+        locales.map(option => (
           <li
             key={option}
             onClick={() => onChoose(option)}
             style={option === locale ? itemActive : itemDefault}
           >
+            {option === locale ? '✔' : null}
             {option}
           </li>
         ))

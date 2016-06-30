@@ -12,7 +12,7 @@ addLocaleData(de);
 
 
 storiesOf('Button', module)
-  .addWithIntl('Localizable Button', () => (<Button action={action('test')} />), {
+  .addWithIntl('Caption Localization', () => (<Button action={action('Button clicked')} />), {
     'ru-RU': {
       'button.caption': 'Нажми меня! (ru-RU)'
     },
@@ -22,5 +22,18 @@ storiesOf('Button', module)
     'es-ES': {
       'button.caption': 'Haz click en mi (es-ES)'
     }
+  })
+  .addWithIntl('Initial Locale (de-DE)', () => (<Button action={action('another test')} />), {
+    'ru-RU': {
+      'button.caption': 'Нажми меня! (ru-RU)'
+    },
+    'de-DE': {
+      'button.caption': 'Klick mich (de-DE)'
+    },
+    'es-ES': {
+      'button.caption': 'Haz click en mi (es-ES)'
+    }
+  }, {
+    initialLocale: 'de-DE'
   });
 
