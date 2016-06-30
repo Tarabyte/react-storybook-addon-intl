@@ -1,7 +1,7 @@
 # React Storybook Intl Addon
 A React Storybook i18n addon to see component stories under different locales.
 
-*TODO: insert gif animation here.*
+[![Demo](http://i.giphy.com/E9qNu695CA9RC.gif)](https://youtu.be/jZkQ9E9-cZs)
 
 ## Usage
 
