@@ -14,7 +14,7 @@ const styles = {
   },
   item: {
     display: 'inline-block',
-    width: '5em',
+    width: '8em',
     paddingTop: '1em',
     paddingLeft: '1em',
     paddingRight: '1em',
