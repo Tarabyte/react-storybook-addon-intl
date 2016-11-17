@@ -39,6 +39,7 @@ storiesOf('Label', module)
     'es-ES': {
     }
   }, {
-    initialLocale: 'de-DE'
+    initialLocale: 'de-DE',
+    formats
   });
 
