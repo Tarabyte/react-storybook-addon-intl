@@ -24,8 +24,8 @@ const styles = {
   }
 };
 
-const withIntl = (locale, messages, cmp) => (
-  <IntlProvider locale={locale} messages={messages}>
+const withIntl = (locale, messages, formats, cmp) => (
+  <IntlProvider locale={locale} messages={messages} formats={formats}>
     {cmp()}
   </IntlProvider>
 );
@@ -39,6 +39,7 @@ export default class Story extends Component {
   static propTypes = {
     render: PropTypes.func.isRequired,
     translations: PropTypes.object.isRequired,
+    formats: PropTypes.object,
     initialLocale: PropTypes.string
   };
 
@@ -82,7 +83,7 @@ export default class Story extends Component {
 
   render() {
     const { locale } = this.state;
-    const { translations, render } = this.props;
+    const { translations, formats, render } = this.props;
     const availableTranslations = this.getAvailableTranslations();
 
     const locales = [allLocales, ...availableTranslations];
@@ -94,13 +95,13 @@ export default class Story extends Component {
             .map(translation => (
               <div style={styles.item} key={translation}>
                 <span style={styles.label}>{translation}</span>
-                {withIntl(translation, translations[translation], render)}
+                {withIntl(translation, translations[translation], formats, render)}
               </div>)
             )
         );
       }
 
-      return () => withIntl(locale, translations[locale], render);
+      return () => withIntl(locale, translations[locale], formats, render);
     })();
 
     return (
