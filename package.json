@@ -1,4 +1,4 @@
-{
+ {
   "name": "react-storybook-addon-intl",
   "version": "0.1.0",
   "description": "React Storybook i18n addon",
@@ -37,7 +37,7 @@
     "lib"
   ],
   "devDependencies": {
-    "@kadira/storybook": "^1.35.1",
+    "@kadira/storybook": "^2.35.1",
     "babel-cli": "^6.10.1",
     "babel-core": "^6.10.4",
     "babel-eslint": "^6.1.0",
@@ -73,7 +73,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "peerDependencies": {
-    "@kadira/storybook": "^1.35.1",
+    "@kadira/storybook": "^2.35.1",
     "react": "^15.1.0",
     "react-intl": "^2.1.3"
   }
