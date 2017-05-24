@@ -71,8 +71,12 @@ export default class Story extends Component {
     return allLocales;
   }
 
+  unique(array) {
+    return [...new Set(array)];
+  }
+
   getAvailableTranslations() {
-    return [defaultLocale, ...Object.keys(this.props.translations)];
+    return this.unique([defaultLocale, ...Object.keys(this.props.translations)]);
   }
 
   changeLocale(locale) {
